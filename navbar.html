@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Navbar – Boom Lift Rent</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ROBOTO FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+   body {
+  font-family: "Roboto", sans-serif;
+  background: #e0d9d9;
+  color: #ffffff;
+  padding-top: 60px; /* adjust to your navbar height */
+}
+
+    /* ===== NAVBAR ===== */
+   /* ===== NAVBAR ===== */
+.navbar {
+  position: fixed;       /* instead of sticky */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: #2f5755;
+}
+
+
+    .navbar-inner {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* ===== LOGO ===== */
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: #ffffff;
+    }
+
+    .nav-logo-placeholder {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      border: 2px solid #e0d9d9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+      background: #432323;
+    }
+
+    .nav-logo-text {
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      line-height: 1.1;
+    }
+
+    .nav-logo-sub {
+      display: block;
+      font-weight: 400;
+      font-size: 0.65rem;
+      opacity: 0.8;
+    }
+
+    /* ===== RIGHT SIDE ===== */
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 1.5rem;
+      position: relative;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #e0d9d9;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 0.09em;
+    }
+
+    .nav-links a:hover {
+      color: #ffffff;
+    }
+
+    /* ===== CALL BUTTON ===== */
+    .call-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.55rem 1.3rem;
+      border-radius: 999px;
+      border: none;
+      background: #432323;
+      color: #ffffff;
+      text-decoration: none; /* no underline */
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .call-btn:hover,
+    .call-btn:focus {
+      background: #e0d9d9;
+      color: #000000;
+      text-decoration: none;
+    }
+
+    /* Desktop-only call button */
+    .call-btn--desktop {
+      display: inline-flex;
+    }
+
+    /* Mobile-only inside panel */
+    .nav-mobile-call {
+      display: none;
+      width: 100%;
+    }
+
+    .nav-mobile-call .call-btn {
+      width: 100%;
+      justify-content: center;
+    }
+
+    /* ===== HAMBURGER BUTTON ===== */
+    .nav-toggle {
+      display: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      background: #432323;
+      border: none;
+      /* margin-right: 16px; */
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .nav-toggle-bars,
+    .nav-toggle-bars::before,
+    .nav-toggle-bars::after {
+      content: "";
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: #e0d9d9;
+      border-radius: 999px;
+      position: absolute;
+      transition: all 0.3s ease;
+    }
+
+    .nav-toggle-bars::before { top: -6px; }
+    .nav-toggle-bars::after  { top:  6px; }
+
+    /* no X animation on hamburger now – X is inside panel */
+
+    /* ===== MOBILE STYLES ===== */
+    @media (max-width: 768px) {
+      .nav-links {
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 72%;
+        max-width: 320px;
+        background: #2f5755;
+        padding: 4rem 2rem;
+        gap: 1.5rem;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        z-index: 1001;
+      }
+
+      .nav-links.open {
+        transform: translateX(0);
+      }
+
+      .nav-toggle {
+        display: flex;
+      }
+
+      .call-btn--desktop {
+        display: none;
+      }
+
+      .nav-mobile-call {
+        display: block;
+      }
+    }
+
+    /* ===== CLOSE (X) BUTTON INSIDE PANEL ===== */
+    .nav-close-btn {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .nav-close-btn {
+        display: block;
+        position: absolute;
+        top: 1.2rem;
+        right: 1.5rem;
+      }
+
+      .nav-close-icon {
+        width: 28px;
+        height: 28px;
+        border-radius: 999px;
+        border: none;
+        background: #432323;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        position: relative;
+      }
+
+      .nav-close-icon::before,
+      .nav-close-icon::after {
+        content: "";
+        position: absolute;
+        width: 16px;
+        height: 2px;
+        background: #e0d9d9;
+        border-radius: 999px;
+      }
+
+      .nav-close-icon::before {
+        transform: rotate(45deg);
+      }
+
+      .nav-close-icon::after {
+        transform: rotate(-45deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <!-- LOGO -->
+    <a href="index.html" class="nav-logo">
+  <img src="./images/logo-bb.png" alt="Boom Lift Rent Logo" class="nav-logo-img" style="height:55px; width:auto; background-color: white; padding: 5px 20px; border-radius: 10px;">
+ 
+</a>
+
+
+      <div class="nav-right">
+        <ul class="nav-links">
+          <!-- X CLOSE BUTTON INSIDE SLIDE PANEL (MOBILE ONLY) -->
+          <li class="nav-close-btn">
+            <button class="nav-close-icon" aria-label="Close menu"></button>
+          </li>
+
+          <li><a href="index.html">Home</a></li>
+          <li><a href="boom-lift-rentals.html">Boom Lift Rentals</a></li>
+          <li><a href="scissor-lift-rentals.html">Scissor Lift Rentals</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+
+          <!-- MOBILE CALL BUTTON INSIDE PANEL -->
+          <li class="nav-mobile-call">
+            <a class="call-btn" href="tel:+1234567890">Click to call us</a>
+          </li>
+        </ul>
+
+        <!-- DESKTOP CALL BUTTON -->
+        <a class="call-btn call-btn--desktop" href="tel:+1234567890">
+          Click to call us
+        </a>
+
+        <!-- HAMBURGER (OPEN MENU) -->
+        <button class="nav-toggle" aria-label="Open menu">
+          <span class="nav-toggle-bars"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <script>
+    const navToggle   = document.querySelector(".nav-toggle");
+    const navLinks    = document.querySelector(".nav-links");
+    const closeButton = document.querySelector(".nav-close-icon");
+    const navLinkTags = document.querySelectorAll(".nav-links a");
+
+    function openMenu() {
+      navLinks.classList.add("open");
+    }
+
+    function closeMenu() {
+      navLinks.classList.remove("open");
+    }
+
+    navToggle.addEventListener("click", openMenu);
+     
+    if (closeButton) {
+      closeButton.addEventListener("click", closeMenu);
+    }
+
+    // Close menu when clicking any link (in mobile)
+    navLinkTags.forEach(link => {
+      link.addEventListener("click", closeMenu); 
+    });
+  </script>
+
+</body>
+</html>

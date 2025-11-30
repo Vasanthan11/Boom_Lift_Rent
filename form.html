@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Enquiry Form – BoomLift Rentals</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ROBOTO FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #e0d9d9;
+      color: #000;
+    }
+
+    .form-container {
+      max-width: 1100px;
+      margin: 2rem auto;
+      display: flex;
+      overflow: hidden;
+      border-radius: 12px;
+      background: white;
+      border: 2px solid #2f5755;
+    }
+
+    /* ===== LEFT PANEL – MODERN DESIGN ===== */
+    .form-info {
+      flex: 1;
+      padding: 3rem 2.5rem;
+      background: linear-gradient(135deg, #2f5755 40%, #432323 100%);
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .form-info h2 {
+      font-size: 1.7rem;
+      letter-spacing: 1px;
+      margin-bottom: 1.2rem;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .form-info p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1.2rem;
+    }
+
+    .form-info .highlight {
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #e0d9d9;
+    }
+
+    .contact-links {
+      list-style: none;
+      margin-top: 1.5rem;
+    }
+
+    .contact-links li {
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .contact-links a {
+      color: #e0d9d9;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== RIGHT FORM AREA ===== */
+    .form-box {
+      flex: 1.2;
+      padding: 2.5rem;
+      background: #ffffff;
+    }
+
+    .form-box h3 {
+      text-transform: uppercase;
+      font-size: 1.3rem;
+      letter-spacing: 1px;
+      color: #432323;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 0.3rem;
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+
+    form input,
+    form select,
+    form textarea {
+      width: 100%;
+      padding: 0.7rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-family: 'Roboto';
+    }
+
+    /* ===== SUBMIT BUTTON ===== */
+    .submit-btn {
+      background: #2f5755;
+      color: white;
+      border: none;
+      padding: 1rem 1.4rem;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: background 0.2s ease;
+    }
+
+    .submit-btn:hover {
+      background: #e0d9d9;
+      color: #000000;
+    }
+
+    /* ===== MOBILE VIEW ===== */
+    @media (max-width: 768px) {
+      .form-container {
+        flex-direction: column;
+      }
+      .form-info {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="form-container">
+    <!-- LEFT PANEL -->
+    <div class="form-info">
+      <h2>Send Us Your Enquiry</h2>
+      <p>
+        Reach out for boom lifts, scissor lifts, and man lift rentals in India.  
+        Share your requirement and we will send you a customized quote.
+      </p>
+      <p class="highlight">FAST RESPONSE • BEST RENTAL RATES • PROFESSIONAL SUPPORT</p>
+
+      <ul class="contact-links">
+        <li>📞 <a href="tel:+919999999999">Call: +91 99999 99999</a></li>
+        <li>📧 <a href="mailto:info@boomliftrentalsIndia.com">
+          Email: info@boomliftrentalsIndia.com</a></li>
+        <li>🕒 Working Hours: Mon – Sat, 9:00 AM to 7:00 PM</li>
+      </ul>
+    </div>
+
+    <!-- RIGHT FORM -->
+    <div class="form-box">
+      <h3>Get Your Custom Quote</h3>
+
+      <form action="submit_form.php" method="POST">
+        <label>FULL NAME*</label>
+        <input type="text" name="fullname" required>
+
+        <label>EMAIL ADDRESS</label>
+        <input type="email" name="email">
+
+        <label>CONTACT NUMBER*</label>
+        <input type="text" name="phone" required>
+
+        <label>AREA / LOCATION</label>
+        <input type="text" name="location">
+
+        <label>SELECT EQUIPMENT</label>
+        <select name="equipment" >
+          <option value="">-- Select --</option>
+          <option>BOOM LIFT</option>
+          <option>SCISSOR LIFT</option>
+          <option>MAN LIFT</option>
+          <option>OTHERS</option>
+        </select>
+
+        <!-- <label>REQUEST TO GET QUOTE</label>
+        <textarea name="message" rows="4"></textarea> -->
+
+        <button class="submit-btn" type="submit">Send My Request Now</button>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

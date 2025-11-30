@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact – Boom, Scissor & Man Lift Rentals Across India</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Roboto -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+    }
+
+    body {
+      font-family: "Roboto", sans-serif;
+      background: #e0d9d9;
+      color: #111111;
+      line-height: 1.45;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    main {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 1.5rem 1rem 3rem;
+    }
+
+    section {
+      margin-bottom: 3.5rem;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    /* BUTTONS */
+
+    .primary-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1.7rem;
+      border-radius: 999px;
+      border: none;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      background: #2f5755;
+      color: #ffffff;
+      cursor: pointer;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .primary-btn:hover,
+    .primary-btn:focus-visible {
+      background: #ffffff;
+      color: #2f5755;
+    }
+
+    /* COMMON HEADINGS */
+
+    .section-heading {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 1rem;
+      color: #432323;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-sub {
+      font-size: 0.95rem;
+      margin-bottom: 1.8rem;
+      max-width: 560px;
+      color: #333333;
+    }
+
+    /* SECTION 1 – HERO CONTACT INTRO */
+
+    .hero {
+      background: linear-gradient(135deg, #2f5755 0%, #432323 55%, #000000 100%);
+      color: #ffffff;
+      padding: 2.5rem 2.25rem;
+      display: grid;
+      grid-template-columns: 1.25fr 1fr;
+      gap: 2.25rem;
+      align-items: center;
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .hero-title {
+      font-size: 2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .hero-subline {
+      font-size: 0.98rem;
+      max-width: 480px;
+      opacity: 0.9;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1.2rem 0;
+    }
+
+    .hero-badge {
+      border-radius: 999px;
+      border: 1px solid rgba(224, 217, 217, 0.75);
+      padding: 0.35rem 1rem;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .hero-right {
+      background: rgba(224, 217, 217, 0.07);
+      border-radius: 14px;
+      border: 1px solid rgba(224, 217, 217, 0.35);
+      padding: 1.7rem 1.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+    }
+
+    .hero-right-title {
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      letter-spacing: 0.09em;
+      opacity: 0.85;
+    }
+
+    .hero-list {
+      list-style: none;
+      font-size: 1rem;
+    }
+
+    .hero-list li {
+      margin-bottom: 0.35rem;
+    }
+
+    /* SECTION 2 – CONTACT DETAILS & FAQ */
+
+    .contact-section {
+      background: #ffffff;
+      padding: 2.4rem 2rem;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    .contact-cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+
+    .contact-card {
+      background: #e0d9d9;
+      border-radius: 12px;
+      border: 1px solid #c0b7b7;
+      padding: 1.1rem 1.1rem 1.2rem;
+      font-size: 0.88rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .contact-card-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #432323;
+      margin-bottom: 0.15rem;
+    }
+
+    .contact-label {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #555555;
+    }
+
+    .contact-card a {
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+
+    .faq-box {
+      border-radius: 14px;
+      border: 1px dashed #c0b7b7;
+      padding: 1.7rem 1.5rem;
+      background: #f5f0f0;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .faq-title {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.9rem;
+      color: #432323;
+    }
+
+    .faq-item strong {
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    /* SECTION 3 – INLINE FORM BLOCK (SINGLE COLUMN FORM) */
+
+    .inline-form-section {
+      background: #ffffff;
+      color: #111111;
+      padding: 2.4rem 2rem;
+      margin-bottom: 0;
+      display: block;
+    }
+
+    .inline-form-section .section-heading {
+      color: #432323;
+    }
+
+    .inline-form-text {
+      font-size: 0.95rem;
+      margin-bottom: 1.2rem;
+      max-width: 640px;
+      color: #333333;
+    }
+
+    .inline-form-points {
+      font-size: 0.86rem;
+      opacity: 0.95;
+      color: #333333;
+      margin-bottom: 1.8rem;
+    }
+
+    .inline-form-points span {
+      display: inline-block;
+      margin-right: 0.75rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .inline-form-heading {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 1rem;
+      color: #432323;
+      margin-bottom: 0.7rem;
+    }
+
+    .inline-form-sub {
+      font-size: 0.9rem;
+      margin-bottom: 1.4rem;
+      color: #333333;
+      max-width: 640px;
+    }
+
+    #inline-form-placeholder {
+      width: 100%;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 980px) {
+      .hero,
+      .contact-section {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 2rem 1.5rem;
+      }
+
+      .hero-right {
+        order: -1;
+      }
+
+      .contact-cards {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      main {
+        padding: 1.25rem 0.75rem 2.5rem;
+      }
+
+      .hero,
+      .contact-section,
+      .inline-form-section {
+        padding: 1.7rem 1.4rem;
+      }
+
+      .contact-cards {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* REVEAL */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* POPUP FORM – CARD (NO IFRAME) */
+
+    .form-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.65);
+      display: none;
+      align-items: flex-start;
+      justify-content: center;
+      z-index: 2000;
+      padding: 2rem 1rem;
+      overflow-y: auto; /* outer scroll if needed */
+    }
+
+    .form-overlay.open {
+      display: flex;
+    }
+
+    .form-popup {
+      position: relative;
+      width: 100%;
+      max-width: 1100px;
+      border-radius: 12px;
+      overflow: hidden;
+      background: transparent;
+    }
+
+    .form-close-btn {
+      position: absolute;
+      top: 2.6rem;
+      right: 0.8rem;
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      border: none;
+      background: #432323;
+      cursor: pointer;
+      z-index: 3;
+    }
+
+    .form-close-btn::before,
+    .form-close-btn::after {
+      content: "";
+      position: absolute;
+      width: 14px;
+      height: 2px;
+      background: #e0d9d9;
+      border-radius: 999px;
+      top: 50%;
+      left: 50%;
+      transform-origin: center;
+    }
+
+    .form-close-btn::before {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    .form-close-btn::after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    /* container where form.html is injected */
+    #popup-form-placeholder {
+      border-radius: 12px;
+      overflow: hidden;
+      /* background: #ffffff; */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <div id="navbar-placeholder"></div>
+
+  <main>
+
+    <!-- SECTION 1: HERO CONTACT INTRO -->
+    <section class="hero reveal">
+      <div class="hero-left">
+        <h1 class="hero-title">Contact our rentals team</h1>
+        <p class="hero-subline">
+          Share your requirement for boom lifts, scissor lifts or man lifts and we will help you
+          finalise a safe and practical access plan for your site.
+        </p>
+
+        <div class="hero-badges">
+          <span class="hero-badge">All India projects</span>
+          <span class="hero-badge">Short &amp; long term rentals</span>
+          <span class="hero-badge">Project-based support</span>
+        </div>
+
+        <button class="primary-btn" type="button" data-open-form>
+          Click here to send your enquiry
+        </button>
+      </div>
+
+      <aside class="hero-right">
+        <div class="hero-right-title">
+          What to mention when you contact us
+        </div>
+        <ul class="hero-list">
+          <li>• Working height and whether the area is indoor or outdoor.</li>
+          <li>• Nature of work – façade, warehouse, industrial, maintenance, etc.</li>
+          <li>• Approximate rental period and expected start date.</li>
+          <li>• Any ground or space limitations we should know about.</li>
+        </ul>
+      </aside>
+    </section>
+
+    <!-- SECTION 2: CONTACT DETAILS & FAQ -->
+    <section class="contact-section reveal">
+      <div>
+        <h2 class="section-heading">Contact details</h2>
+        <p class="section-sub">
+          You can reach us by phone, email or by sharing your requirement through the enquiry form.
+          We’ll respond with suitable machine options and a detailed quote.
+        </p>
+
+        <div class="contact-cards">
+          <div class="contact-card">
+            <div class="contact-label">Primary contact</div>
+            <div class="contact-card-title">Call our rentals desk</div>
+            <p>
+              <strong>Phone:</strong>
+              <a href="tel:+919999999999">+91 99999 99999</a>
+            </p>
+            <p>
+              <strong>Working hours:</strong><br>
+              Mon – Sat, 9:00 AM to 7:00 PM
+            </p>
+            <p style="font-size:1rem; margin-top:0.4rem;">
+              If you’re calling from site, keep basic height and access details ready so we can help you faster.
+            </p>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-label">Email</div>
+            <div class="contact-card-title">Send us your scope</div>
+            <p>
+              <strong>Email:</strong>
+              <a href="mailto:info@boomliftrentalsdelhi.com">info@boomliftrentalsdelhi.com</a>
+            </p>
+            <p>
+              Attach drawings, photos or rough sketches if available – this helps us understand
+              your access requirement more clearly.
+            </p>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-label">Projects</div>
+            <div class="contact-card-title">Project &amp; site locations</div>
+            <p>
+              We support jobs across major industrial areas, logistics hubs, city projects and
+              infrastructure sites in India.
+            </p>
+            <p style="font-size:1rem;">
+              Mention your city and site type when you contact us so we can check availability quickly.
+            </p>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-label">Enquiry form</div>
+            <div class="contact-card-title">Share your requirement online</div>
+            <p>
+              Use the enquiry form on this page if you prefer to share details in writing and receive a
+              structured response by email or phone.
+            </p>
+            <button class="primary-btn" type="button" data-open-form>
+              Click here to open enquiry form
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <aside class="faq-box">
+        <div class="faq-title">Quick answers</div>
+
+        <div class="faq-item">
+          <strong>How soon can you respond?</strong>
+          For most enquiries we respond within the same working day, with basic availability information
+          and follow-up questions if needed.
+        </div>
+
+        <div class="faq-item">
+          <strong>Do you provide operators with the machines?</strong>
+          Yes, operator-supported options are available for many locations. Mention this in your enquiry
+          so we can include it in the quote.
+        </div>
+
+        <div class="faq-item">
+          <strong>What if I’m not sure which lift I need?</strong>
+          That’s perfectly fine – just explain your work, height and site conditions in simple language.
+          We’ll help you decide whether a boom lift, scissor lift or man lift is suitable.
+        </div>
+
+        <button class="primary-btn" type="button" data-open-form>
+          Click here to ask a quick question
+        </button>
+      </aside>
+    </section>
+
+    <!-- SECTION 3: INLINE FORM BLOCK (SINGLE COLUMN) -->
+    <section class="inline-form-section reveal">
+      <h2 class="section-heading">Send us your lift requirement</h2>
+      <p class="inline-form-text">
+        Use this form if you’re ready to share your project details now. The more information you share,
+        the easier it is for us to respond with accurate machine options and pricing.
+      </p>
+      <div class="inline-form-points">
+        <span>• Working height &amp; type of work</span>
+        <span>• Indoor or outdoor area</span>
+        <span>• Expected rental duration</span>
+        <span>• Any special site constraints</span>
+      </div>
+
+      <h3 class="inline-form-heading">Online enquiry form</h3>
+      <p class="inline-form-sub">
+        Fill out the fields in the form below. You can also mention if you prefer a phone call back
+        or a detailed email response.
+      </p>
+
+      <div id="inline-form-placeholder"></div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <div id="footer-placeholder"></div>
+
+  <!-- POPUP FORM (NO IFRAME) -->
+  <div class="form-overlay" id="form-overlay">
+    <div class="form-popup">
+      <button class="form-close-btn" id="form-close-btn" type="button" aria-label="Close form"></button>
+      <div id="popup-form-placeholder"></div>
+    </div>
+  </div>
+
+  <script>
+    // Load fragments (navbar, footer, forms)
+    function loadFragment(url, targetId, callback) {
+      fetch(url)
+        .then(function (res) { return res.text(); })
+        .then(function (html) {
+          var el = document.getElementById(targetId);
+          if (el) el.innerHTML = html;
+          if (typeof callback === "function") callback();
+        })
+        .catch(function (err) {
+          console.error("Error loading fragment:", url, err);
+        });
+    }
+
+    // Init navbar (hamburger from navbar.html)
+    function initNavbar() {
+      var navToggle   = document.querySelector(".nav-toggle");
+      var navLinks    = document.querySelector(".nav-links");
+      var closeButton = document.querySelector(".nav-close-icon");
+      var navLinkTags = document.querySelectorAll(".nav-links a");
+
+      if (!navLinks) return;
+
+      function openMenu() {
+        navLinks.classList.add("open");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeMenu() {
+        navLinks.classList.remove("open");
+        document.body.style.overflow = "";
+      }
+
+      if (navToggle) {
+        navToggle.addEventListener("click", openMenu);
+      }
+
+      if (closeButton) {
+        closeButton.addEventListener("click", closeMenu);
+      }
+
+      navLinkTags.forEach(function (link) {
+        link.addEventListener("click", closeMenu);
+      });
+    }
+
+    loadFragment("navbar.html", "navbar-placeholder", initNavbar);
+    loadFragment("footer.html", "footer-placeholder");
+    loadFragment("form.html", "inline-form-placeholder");
+    loadFragment("form.html", "popup-form-placeholder");
+
+    // Scroll reveal
+    var revealEls = document.querySelectorAll(".reveal");
+
+    if ("IntersectionObserver" in window) {
+      var obs = new IntersectionObserver(function (entries, o) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            o.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+
+      revealEls.forEach(function (el) { obs.observe(el); });
+    } else {
+      revealEls.forEach(function (el) { el.classList.add("visible"); });
+    }
+
+    // Popup form logic
+    var formOverlay = document.getElementById("form-overlay");
+    var closeBtn    = document.getElementById("form-close-btn");
+
+    function openForm() {
+      if (!formOverlay) return;
+      formOverlay.classList.add("open");
+      document.body.style.overflow = "hidden";
+
+      // close mobile menu if open
+      var navLinks = document.querySelector(".nav-links");
+      if (navLinks) navLinks.classList.remove("open");
+    }
+
+    function closeForm() {
+      if (!formOverlay) return;
+      formOverlay.classList.remove("open");
+      document.body.style.overflow = "";
+    }
+
+    // Event delegation: any element with data-open-form opens popup
+    document.addEventListener("click", function (e) {
+      var trigger = e.target.closest("[data-open-form]");
+      if (trigger) {
+        e.preventDefault();
+        openForm();
+      }
+    });
+
+    if (closeBtn) {
+      closeBtn.addEventListener("click", closeForm);
+    }
+
+    if (formOverlay) {
+      formOverlay.addEventListener("click", function (e) {
+        if (e.target === formOverlay) {
+          closeForm();
+        }
+      });
+    }
+  </script>
+</body>
+</html>
