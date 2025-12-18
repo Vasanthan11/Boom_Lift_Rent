@@ -145,6 +145,25 @@
         display: none;
       }
     }
+
+    .location-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.location-chips .chip {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: 14px;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
   </style>
 </head>
 
@@ -164,7 +183,19 @@
         <li><a href="tel:+917200032931">Call: +91 72000 32931</a></li>
         <li><a href="mailto:info@boomliftrent.com">
           Email: info@boomliftrent.com</a></li>
-           <li><i class="fas fa-location"></i> Our Location: Chennai, Coimbatore, Kochi, Bengaluru, Hyderabad, Pune, Mumbai, Delhi</li>
+           <li><i class="fas fa-location"></i> Our Location: <li>
+  <div class="location-chips">
+    <span class="chip">Chennai</span>
+    <span class="chip">Coimbatore</span>
+    <span class="chip">Kochi</span>
+    <span class="chip">Bengaluru</span>
+    <span class="chip">Hyderabad</span>
+    <span class="chip">Pune</span>
+    <span class="chip">Mumbai</span>
+    <span class="chip">Delhi</span>
+  </div>
+</li>
+</li>
         <li>Working Hours: Mon – Sat, 9:00 AM to 7:00 PM</li>
       </ul>
     </div>
